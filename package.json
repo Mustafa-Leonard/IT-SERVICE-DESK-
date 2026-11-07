@@ -1,0 +1,16 @@
+{
+  "name": "it-service-desk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "IT Service Desk and Network Asset Management System",
+  "scripts": {
+    "build": "npm run build --prefix backend && npm run build --prefix frontend",
+    "lint": "npm run lint --prefix backend && npm run lint --prefix frontend",
+    "test": "npm run test --prefix backend",
+    "test:e2e": "npm run test:e2e --prefix backend",
+    "db:generate": "npm exec --prefix backend -- prisma generate --config backend/prisma.config.ts",
+    "db:migrate": "npm exec --prefix backend -- prisma migrate dev --config backend/prisma.config.ts",
+    "db:deploy": "npm exec --prefix backend -- prisma migrate deploy --config backend/prisma.config.ts",
+    "admin:bootstrap": "npm exec --prefix backend -- tsx backend/scripts/bootstrap-admin.ts"
+  }
+}

@@ -1,0 +1,111 @@
+.network-tabs {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-5);
+}
+
+.network-tab {
+  flex: 0 0 auto;
+  min-height: 2.75rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  padding: 0 var(--space-3);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.network-tab:hover,
+.network-tab-active {
+  color: var(--color-primary);
+}
+
+.network-tab-active {
+  border-bottom-color: var(--color-accent);
+  font-weight: 600;
+}
+
+.network-workspace {
+  grid-template-columns: minmax(17rem, 0.7fr) minmax(0, 1.5fr);
+}
+
+.network-section-stack {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.topology-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.topology-diagram-panel {
+  grid-column: 1 / -1;
+}
+
+.topology-diagram-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.topology-diagram {
+  display: block;
+  width: 100%;
+  min-width: 38rem;
+  height: auto;
+}
+
+.topology-edge {
+  stroke: var(--color-border-strong);
+  stroke-width: 2;
+}
+
+.topology-node circle {
+  fill: var(--color-primary-soft);
+  stroke: var(--color-primary);
+  stroke-width: 2;
+}
+
+.topology-node text {
+  fill: var(--color-text);
+  font: 500 13px var(--font-body);
+}
+
+.configuration-backup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.network-record-list {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin: var(--space-4) 0 0;
+  list-style: none;
+}
+
+.network-record-list li {
+  display: grid;
+  gap: var(--space-1);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-3) 0;
+}
+
+.network-record-list li > span {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 64rem) {
+  .network-workspace,
+  .topology-grid {
+    grid-template-columns: 1fr;
+  }
+}
